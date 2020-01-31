@@ -216,3 +216,136 @@ mv uc\?id\=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA gdrive
 chmod +x gdrive 
 sudo install gdrive /usr/local/bin/gdrive
 gdrive list
+gdrive 
+gdrive help
+ls
+vi monitor.sh 
+sudo apt-get install git
+add-apt-repository ppa:git-core/ppa
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update; apt install git
+sudo su
+ls
+ssh 192.168.60.130
+mkdir script
+ls
+cd script/
+vi install_postfix_gmail.sh
+mv install_postfix_gmail.sh install_postfix_gmail_ssh_keygen.sh 
+ls
+ssh 192.168.60.130
+su - paques
+ls
+mv script.sh script/
+cd script/
+mv script.sh script_auto_start_paques.sh
+ls
+chmod +x install_postfix_gmail_ssh_keygen.sh 
+ls
+git add .
+sudo git add .
+commit -m "script"
+git commit -m "script"
+sudo git commit -m "script"
+sudo git remote add origin https://github.com/mfaisal0411/script_sh.git
+sudo git push -u origin master
+sudo git init
+ls
+git add .
+sudo git add .
+cd
+ls
+ls | grep .sh
+ls | grep .sh | mv script/
+mv disk_monitor.sh script/
+mv monitor.sh script/
+mv port_scan.sh script/
+mv report.sh script/
+mv scp.sh script/
+mv service_monitor.sh script/
+mv tes.sh script/
+cd script/
+ls
+sudo git add .
+sudo commit -m "script"
+sudo git commit -m "script"
+sudo git remote add origin https://github.com/mfaisal0411/script_sh.git
+git push -u origin master
+init 
+sudo git init
+sudo su
+history | grep git
+git remote -v
+sudo su
+telnet localhost 25
+sudo cat /var/log/mail.log 
+telnet localhost 25
+sudo cat /var/log/mail.log 
+tail -f /var/log/mail.log 
+sudo cat script/readlolg.sh 
+sudo vi script/readlolg.sh 
+telnet localhost 25
+tail -f /var/log/mail.log  
+telnet localhost 25
+crontab -l
+cd script/
+ls
+vi readlolg.sh 
+sudo tail -n 0 -F /var/log/mail.log 
+sudo tail -f /var/log/mail.log 
+sudo tail -1 /var/log/mail.log 
+sudo tail -n 0 -F /var/log/mail.log 
+sudo tail -n 0 -F /var/log/mail.log | grep connect
+sudo tail -n 0 -F /var/log/mail.log | grep "connect from localhost"
+vi readlolg.sh 
+sudo vi readlolg.sh 
+sudo chmod +x readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+sudo tail -n 0 -F /var/log/mail.log 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+./readlolg.sh 
+sudo vi readlolg.sh 
+tail -help
+tail --help
+sudo vi readlolg.sh 
+./readlolg.sh 
+postqueue -p
+sudo postsuper -d
+sudo postsuper -D ALL
+sudo postsuper -d ALL
+postqueue -p
+./readlolg.sh 
+pwd
+crontab -e
+ls
+crontab -e
+tail -f /var/log/syslog 
