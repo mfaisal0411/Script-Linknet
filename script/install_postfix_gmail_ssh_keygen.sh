@@ -10,7 +10,7 @@ echo "smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd" >> $path
 echo "smtp_sasl_security_options = noanonymous" >> $path
 echo "smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt" >> $path
 echo "smtp_use_tls = yes" >> $path
-echo "[smtp.gmail.com]:587	monitoring.paques@gmail.com:ulxoyvwgqhlzrtyt" >> $path1
+echo "[smtp.gmail.com]:587	emai_account:email_password" >> $path1
 
 sudo chown root:root /etc/postfix/sasl_passwd
 sudo chmod 600 /etc/postfix/sasl_passwd
