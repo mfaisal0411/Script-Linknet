@@ -1,0 +1,39 @@
+#!/bin/bash
+
+username="xxx"
+password="xxx"
+d_file=`date -d '+ 1 hour' "+%Y%m%d_%H3000"`
+d_result=`date -d '+ 1 hour' +"%Y.%m.%d_%H.00"`
+del_result=`date -d '5 hour ago' +"%Y.%m.%d_%H.00"`
+root_dir="onuresources"
+filename="ZTE_${d_file}.csv"
+dst_file="/home/smart/ftth_script/ont_status/nms"
+ftp_dir_date=`date -d '+ 1 hour' +"%Y%m%d"`
+ftp_dir="/home/ontdata/ontsnapshot/${ftp_dir_date}"
+logs="/home/smart/ftth_script/ont_status/nms/log/transfer.log"
+
+wget --ftp-user="$username" --ftp-password="$password" --directory-prefix="$dst_file" ftp://192.168.240.5/${root_dir}/${filename}
+if [ -f "${dst_file}/${filename}" ]
+then
+        echo "`date '+%Y/%m/%d %H:%M:%S'` - ${dst_file}/${filename} rename to ${dst_file}/${d_result}_ZTE_ONT_STATUS_01.csv" >> $logs
+        mv ${dst_file}/${filename} ${dst_file}/${d_result}_ZTE_ONT_STATUS_01.csv
+        wait
+        check_dir=`ssh ontdata@192.168.77.241 'find /home/ontdata/ontsnapshot/ -type d -name "'${ftp_dir_date}'"'`
+        print_dir=`echo $check_dir`
+        if [ -n "$print_dir" ]
+        then
+                echo "`date '+%Y/%m/%d %H:%M:%S'` - ${ftp_dir}, ${dst_file}/${d_result}_ZTE_ONT_STATUS_01.csv already exists" >> $logs
+                scp ${dst_file}/${d_result}_ZTE_ONT_STATUS_01.csv ontdata@192.168.77.241:${ftp_dir}/
+                echo "`date '+%Y/%m/%d %H:%M:%S'` - sending data ${d_result}_ZTE_ONT_STATUS_01.csv to ${ftp_dir}" >> $logs
+        else
+                echo "`date '+%Y/%m/%d %H:%M:%S'` - ${ftp_dir} not exists, ${d_result}_ZTE_ONT_STATUS_01.csv already exists" >> $logs
+                ssh ontdata@192.168.77.241 'mkdir -p "'${ftp_dir}'"'
+                echo "`date '+%Y/%m/%d %H:%M:%S'` - create ${ftp_dir}" >> $logs
+                wait
+                scp ${dst_file}/${d_result}_ZTE_ONT_STATUS_01.csv ontdata@192.168.77.241:${ftp_dir}/
+                echo "`date '+%Y/%m/%d %H:%M:%S'` - sending data ${d_result}_ZTE_ONT_STATUS_01.csv to ${ftp_dir}/" >> $logs
+        fi
+else
+        echo "`date '+%Y/%m/%d %H:%M:%S'` - ${dst_file}/${filename} not exists" >> $logs
+fi
+rm -f $dst_file/${del_result}_ZTE_ONT_STATUS_01.csv
